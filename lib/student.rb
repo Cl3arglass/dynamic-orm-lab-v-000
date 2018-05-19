@@ -67,9 +67,8 @@ class Student < InteractiveRecord
 
     p col_name = hash.keys[0].to_s
     p value = hash.values[0]
-    sql = "SELECT * FROM #{self.table_name} WHERE COLUMN_NAME like ? = ?"
+    sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
     DB[:conn].execute(sql, col_name, value)
-    # p send(col_name)
 
   end
 
