@@ -67,8 +67,8 @@ class Student < InteractiveRecord
 
     col_name = hash.keys[0].to_s
     value = hash.values[0]
-    sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-    DB[:conn].execute(sql, col_name, value)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = ?"
+    DB[:conn].execute(sql, value)
 
   end
 
